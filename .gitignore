@@ -1,0 +1,5 @@
+.venv/
+__pypache__/
+.env
+config.py
+*.log
