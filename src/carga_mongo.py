@@ -1,10 +1,25 @@
-import pandas as pd
 import sys
 from pathlib import Path
+from venv import logger
 sys.path.append(str(Path(__file__).resolve().parent.parent))
-from pymongo import MongoClient
 from sqlalchemy import create_engine, text
-from config import POSTGRES_URL, MONGO_URL
+from pymongo import MongoClient
+import pandas as pd
+import logging,sys
+#from venv import logger
+from config import MONGO_URL,POSTGRES_URL
+logging.basicConfig(
+
+    level=logging.INFO,
+
+    format="%(asctime)s [%(levelname)s] %(message)s",
+
+    force=True
+
+)
+
+logger = logging.getLogger(__name__)
+
 import logging,sys
 from venv import logger
 def resumir(df: pd.DataFrame) -> list[dict]:
